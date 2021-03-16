@@ -1,28 +1,29 @@
 package pr1;
+import java.util.Comparator;
 import java.util.regex.*;
 
-public class Main implements Comparator {
+public class Main implements Comparator<Main> {
 
-    private String someString;
-    private int sum = 0;
+    private final int sumOfNums;
 
-    public void setSumOfNumbers(String str) {
-        int sum = 0;
-        String[] numbers = str.split("\\s+");
-        for (String number : numbers) {
-            Integer n = Integer.parseInt(number);
-            sum += n;
+    public Main(String someString) {
+        Pattern p = Pattern.compile("-?\\d+");
+        assert false;
+        Matcher m = p.matcher(someString);
+        int summ = 0;
+        while (m.find()) {
+            summ += Integer.parseInt(m.group());
         }
+        sumOfNums = summ;
+    }
 
-        this.sum = sum;
+    public int compare(Main m2) {
+        return Integer.compare(this.sumOfNums, m2.sumOfNums);
     }
 
     public static void main(String[] args) {
-        Main object1 = new Main();
-        Main object2 = new Main();
-
-        object1.someString = " 20  3 1 0";
-        object1.someString = "8 10 1";
+        Main object1 = new Main("12 4 0");
+        Main object2 = new Main("9 2 4 1");
 
         if (object1.compare(object2) > 0)
             System.out.println("Первая строка больше по сумме чисел");
@@ -32,13 +33,8 @@ public class Main implements Comparator {
             System.out.println("Строки равны по сумме чисел");
     }
 
-    public int compare(Main o1) {
-        setSumOfNumbers(this.someString);
-        setSumOfNumbers(o1.someString);
-
-        return Integer.compare(this.sum, o1.sum);
+    @Override
+    public int compare(Main o1, Main o2) {
+        return 0;
     }
-
 }
-
-
