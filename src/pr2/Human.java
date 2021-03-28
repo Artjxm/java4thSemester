@@ -47,7 +47,18 @@ public class Human {
         this.birthDate = birthDate;
     }
 
-    public Human(int age, int weight, String firstName, String lastName, LocalDate birthDate) {
+    @Override
+    public String toString() {
+        return "Human{" +
+                "age=" + age +
+                ", weight=" + weight +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", birthDate=" + birthDate +
+                '}';
+    }
+
+    public Human(int age, String firstName, String lastName, LocalDate birthDate, int weight) {
         this.age = age;
         this.weight = weight;
         this.firstName = firstName;
