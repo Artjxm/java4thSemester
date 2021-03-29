@@ -22,8 +22,8 @@ public class Main implements Comparator<Main> {
     }
 
     public static void main(String[] args) {
-        Main object1 = new Main("12 4 0");
-        Main object2 = new Main("9 2 4 1");
+        Main object1 = new Main("25 1");
+        Main object2 = new Main("2 12 9 4");
 
         if (object1.compare(object2) > 0)
             System.out.println("Первая строка больше по сумме чисел");

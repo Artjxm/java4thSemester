@@ -1,5 +1,7 @@
 package pr2;
 
+import pr1.Main;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +20,7 @@ public class sortPeople {
 
         for(int i = 0; i < size; ++i) {
             LocalDate date = LocalDate.of(random.nextInt(50) + 1970, random.nextInt(12) + 1,
-                    random.nextInt(31) + 1);
+                    random.nextInt(28) + 1);
             finalList.add(new Human(
                     random.nextInt(99),
                     firstNameArr[random.nextInt(firstNameArr.length)],
@@ -35,6 +37,7 @@ public class sortPeople {
         Stream<Human> stream2 = array.stream();
         Stream<Human> stream3 = array.stream();
         Stream<Human> stream4 = array.stream();
+        Stream<Human> stream5 = array.stream();
 
         System.out.println("Список людей до применения функциональных потоков:");
         array.forEach(System.out::println);
@@ -51,8 +54,16 @@ public class sortPeople {
         stream3.map(Human::getBirthDate).sorted().forEach(System.out::println);
 
         System.out.println("\nРасчет среднего веса:");
-        int avgSum = 0;
-        stream4.map(avgSum += Human::getWeight()).forEach();
+        int avgSum;
+        long amount;
+        avgSum = stream4.mapToInt(Human::getWeight).sum();
+        amount = stream5.map(Human::getWeight).count();
+        System.out.println(avgSum / amount);
+    }
+
+    public static void main(String[] args) {
+        sortPeople hello = new sortPeople();
+        hello.getList(10);
     }
 }
 
