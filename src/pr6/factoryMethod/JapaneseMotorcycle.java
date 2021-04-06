@@ -1,7 +1,7 @@
 package pr6.factoryMethod;
 
-public class JapaneseMotorcycle implements Motorcycle{
-    public void produce() {
-        System.out.println("That's a japanese bike!");
+public class JapaneseMotorcycle extends Motorcycle {
+    public String getTransport() {
+        return "Japan produces best motorbikes.";
     }
 }
