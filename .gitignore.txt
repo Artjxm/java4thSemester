@@ -1,2 +1,2 @@
-.idea
-java4thSemester.iml
+/.idea
+/java4thSemester.iml
