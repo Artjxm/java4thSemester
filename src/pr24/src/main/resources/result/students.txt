@@ -1,0 +1,4 @@
+id|group_id|first_name|last_name|middle_name
+3|2|Artyom|Moskovka|Alexandrovich
+6|4|Ivan|Nikolaev|Axenov
+7|4|Oleg|Veselov|Valeryevich
