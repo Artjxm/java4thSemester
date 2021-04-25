@@ -1,0 +1,25 @@
+server:
+  port:  8080
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/pr15
+    username: postgres
+    password: 123
+    driverClassName: org.postgresql.Driver
+  mail:
+    host: smtp.yandex.ru
+    username: SPRING_MAIL_USERNAME
+    password: SPRING_MAIL_PASSWORD
+    protocol: smtps
+mail:
+  to: EMAIL_TO_SEND
